@@ -1,0 +1,12 @@
+.container {
+	margin-top: 50px;
+}
+.second__box_big {
+	height: 100px;
+	border: 2px solid #000;
+}
+.second__box_small {
+	height: 50px;
+	background-color: #61cf67;
+	border: 1px solid #000;
+}

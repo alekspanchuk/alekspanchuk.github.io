@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson #</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<!-- Сверстать ряд, в котором 6 иконок. Отображаться они должны с следующем виде: 
+а) на самых маленьких мониторах в ряд по 1 иконке 
+б) на маленьких мониторах в ряд по 2 иконки 
+в) на средних мониторах в ряд по 3 иконки 
+г) на больших мониторах в ряд по 6 колонок 
+в колонке все выровнять по центру  -->
+
+<!-- sect#first>.container>.row.text-center>.col-lg-2.col-md-4.col-sm-6.col-xs-12*6>img[src="/img/icon_$.png" alt="Icon"] -->
+  <section id="first">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12"><img src="/img/icon_1.png" alt="Icon"></div>
+        <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12"><img src="/img/icon_2.png" alt="Icon"></div>
+        <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12"><img src="/img/icon_3.png" alt="Icon"></div>
+        <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12"><img src="/img/icon_4.png" alt="Icon"></div>
+        <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12"><img src="/img/icon_5.png" alt="Icon"></div>
+        <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12"><img src="/img/icon_6.png" alt="Icon"></div>
+      </div>
+    </div>
+  </section>
+<!-- Сверстать элемент, высотой 100px с рамкой в 2px цветом #000. Элемент должен занимать 8 колонок 
+Внутри этого элемента расположить 4 элемента с высотой 50px и сплошным фоном зеленого цвета. Элементы должны занимать одинаковую ширину (количество колонок). -->
+
+<!-- sect#second>.container>.row>.col-lg-8.col-xs-8.col-lg-offset-2.col-xs-offset-2.second__box_big>.row>.col-lg-3.col-xs-3.second__box_small*4 -->
+  <section id="second">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-xs-8 col-lg-offset-2 col-xs-offset-2 second__box_big">
+          <div class="row">
+            <div class="col-lg-3 col-xs-3 second__box_small"></div>
+            <div class="col-lg-3 col-xs-3 second__box_small"></div>
+            <div class="col-lg-3 col-xs-3 second__box_small"></div>
+            <div class="col-lg-3 col-xs-3 second__box_small"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

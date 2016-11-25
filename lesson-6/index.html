@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Урок #6. Александр Панчук</title>
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+	<!-- Создать секцию, внутри которой 3 ссылки:  -->
+	<!-- а) Ссылка на внешний сайт, которая открывается в новой вкладке  -->
+	<!-- б) Ссылка на якорь (определенное место на странице, например подвал)  -->
+	<!-- в) Ссылка скачивание файла (любого) --> 
+	<section class="links">
+		<h2>Ссылки</h2>
+		<ol type="a">
+			<li><a target="_blank" href="http://up-skills.ru/">Уроки web-разработки</a></li>
+			<li><a href="#example_2">Последнее задание (ссылка-якорь)</a></li>
+			<li><a download href="docs/example.txt">Скачать документ</a></li>
+		</ol>
+	</section>
+	<!-- Создать секцию. Внутри разместить картинку шириной 250px. Под картинкой ссылка "купить" в виде изображения корзины -->
+	<section class="basket">
+		<h2>Корзина для покупок</h2>
+		<img class="basket__product" src="img/product.jpg" alt="Iphone 8"><br>
+		<a href="#"><img class="basket__icon" src="img/icon_basket.jpg" alt="Купить"></a>
+	</section>
+	<!-- Создать секцию высотой во весь экран, повесить на нее id example_1. Установить фон-картинку. Растянуть ее на ширину всей секции. Картинка должна заполнять всю секцию. -->
+	<section id="example_1">
+		<h2>Фон во всю секцию</h2>
+	</section>
+	<!-- - Создать секцию высотой во весь экран, повесить на нее id example_2. Установить фон-паттерн. -->
+	<section id="example_2">
+		<h2>Фон-паттерн</h2>
+	</section>
+</body>
+</html>
