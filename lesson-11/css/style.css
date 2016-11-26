@@ -24,13 +24,7 @@
 .header__top_menu {
 	float: right;
 }
-.header__top_menu::before {
-  display: block;
-  content: '';
-  width: 34px;
-  border: 2px solid #706b73;
-  border-radius: 1px;
-}
+.header__top_menu::before,
 .header__top_menu::after {
   display: block;
   content: '';
