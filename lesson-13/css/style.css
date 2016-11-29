@@ -1,0 +1,219 @@
+/* MIXINS =================================== */
+.open-reg {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+.open-bold {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+}
+/* default */
+/* header */
+/* working process */
+/* COMMON STYLES ============================ */
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #6d6d6d;
+}
+.section__caption {
+  margin-top: 10%;
+  margin-bottom: 9%;
+  text-align: center;
+}
+.section__caption h1,
+.section__caption h2 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 50px;
+}
+.section__caption h1 span,
+.section__caption h2 span {
+  color: #fc7253;
+}
+input:focus,
+button:focus,
+textarea:focus {
+  outline: none;
+}
+/* HEADER =================================== */
+.header {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  background-image: url("../img/header_bg.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+.header__top {
+  margin-top: 7%;
+}
+/* HEADER-LOGO */
+.header__top_logo {
+  width: 150px;
+  height: 55px;
+  border: 4px solid #6d6d6d;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  font-size: 37px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  text-align: center;
+  line-height: 47px;
+}
+.logo_colored {
+  color: #fd9b85;
+}
+/* HEADER-MENU */
+.header__top_menu {
+  float: right;
+}
+.header__top_menu::before,
+.header__top_menu::after {
+  display: block;
+  content: '';
+  width: 34px;
+  border: 2px solid #6d6d6d;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+}
+.header__menu_stick {
+  width: 34px;
+  margin: 4px 0;
+  border: 2px solid #6d6d6d;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+}
+/* HEADER-FORM */
+.header__form {
+  width: 100%;
+  height: 388px;
+  max-width: 372px;
+  margin-top: 50px;
+  padding: 20px 40px;
+  /* 1.7% 3.5% */
+  -webkit-box-shadow: 0px 0px 57px 0px rgba(20, 20, 21, 0.2);
+  -moz-box-shadow: 0px 0px 57px 0px rgba(20, 20, 21, 0.2);
+  box-shadow: 0px 0px 57px 0px rgba(20, 20, 21, 0.2);
+  background-color: #fff;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  text-align: center;
+}
+.header__form p {
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+.header__form p span {
+  color: #fd9b85;
+}
+.header__form input,
+.header__form textarea {
+  width: 100%;
+  margin-top: 32px;
+  border: none;
+  border-bottom: 1px solid #bababa;
+  font-size: 15px;
+}
+.header__form button {
+  width: 100%;
+  max-width: 238px;
+  height: 55px;
+  margin: 0 auto;
+  margin-top: 15px;
+  border: none;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  background-color: #fc7253;
+  font-size: 16px;
+  color: #fff;
+}
+/* WORKING PROCESS ========================== */
+.process {
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+.process_box {
+  max-width: 262px;
+  margin: 0 auto;
+  padding: 45px 10% 65px;
+  color: #ffffff;
+  /* PROCESS-BACKGROUND */
+  /* PROCESS-TEXT */
+  /* PROCESS-BUTTON */
+}
+.process_box_tomi {
+  background-color: #4eb2f7;
+}
+.process_box_koimona {
+  background-color: #c049f8;
+}
+.process_box_koire {
+  background-color: #817eff;
+}
+.process_box_lara {
+  background-color: #f74770;
+}
+.process_box_lara i {
+  -webkit-transform: rotate(-15deg);
+  -ms-transform: rotate(-15deg);
+  -o-transform: rotate(-15deg);
+  transform: rotate(-15deg);
+}
+.process_box h4 {
+  font-size: 20px;
+  margin: 15px 0;
+}
+.process_box p {
+  font-size: 15px;
+}
+.process_box_button {
+  width: 88%;
+  max-width: 230px;
+  height: 55px;
+  display: block;
+  margin: -30px auto 30px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  background-color: #ffffff;
+  line-height: 55px;
+  vertical-align: middle;
+  color: #6d6d6d;
+}
+.process_box_button:hover {
+  text-decoration: none;
+  color: #6d6d6d;
+}
+.process_box_button span {
+  display: inline-block;
+  width: 16px;
+  height: 1px;
+  margin-right: 18px;
+  vertical-align: middle;
+  background-color: #6d6d6d;
+}
+.process_box_button span::before {
+  display: block;
+  margin-left: 7px;
+  margin-top: -8px;
+  content: '';
+  width: 1px;
+  height: 16px;
+  background-color: #6d6d6d;
+}
+/* PROCESS-ICON */
+.fa {
+  font-size: 50px;
+  color: #ffffff;
+}
