@@ -12,7 +12,7 @@
 		-moz-border-radius: @radius;
 		border-radius: @radius;
 	}
-	.box-shadow(@a @b @c @d @e) {
+	.box-shadow(@a, @b, @c, @d, @e) {
 		-webkit-box-shadow: @a @b @c @d @e;
 		-moz-box-shadow: @a @b @c @d @e;
 		box-shadow: @a @b @c @d @e;
@@ -67,7 +67,7 @@
 		background-size: cover;
 	}
 	.header__top {
-		margin-top: 7%;
+		margin-top: 5%;
 	}
 	/* HEADER-LOGO */
 		.header__top_logo {
@@ -185,6 +185,7 @@
 			height: 55px;
 			display: block;
 			margin: -30px auto 30px;
+			.box-shadow(0px, 6px, 14px, 0px, rgba(20, 20, 21, 0.09));
 			.border-radius(50px);
 			background-color: @white;
 			line-height: 55px;
