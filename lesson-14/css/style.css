@@ -245,53 +245,37 @@ textarea:focus {
 }
 .works__box {
   position: relative;
-  width: 100%;
-  max-width: 360px;
-  min-height: 360px;
-  margin: 0 auto;
   margin-top: 8%;
+  overflow: hidden;
+  background-position: center center;
+  background-size: cover;
   color: #ffffff;
 }
-/* WORKS_BOX BACKGROUNDS */
-.works__col:nth-child(1) .works__box {
-  background: url("../img/works_1.jpg") center center no-repeat;
+.works__box img {
+  margin: 0 auto;
 }
-.works__col:nth-child(2) .works__box {
-  background: url("../img/works_2.jpg") center center no-repeat;
-}
-.works__col:nth-child(3) .works__box {
-  background: url("../img/works_3.jpg") center center no-repeat;
-}
-.works__col:nth-child(4) .works__box {
-  background: url("../img/works_4.jpg") center center no-repeat;
-}
-.works__col:nth-child(5) .works__box {
-  background: url("../img/works_5.jpg") center center no-repeat;
-}
-.works__col:nth-child(6) .works__box {
-  background: url("../img/works_6.jpg") center center no-repeat;
-}
-.works__col:nth-child(7) .works__box {
-  background: url("../img/works_7.jpg") center center no-repeat;
-}
-.works__col:nth-child(8) .works__box {
-  background: url("../img/works_8.jpg") center center no-repeat;
-}
-.works__col:nth-child(9) .works__box {
-  background: url("../img/works_9.jpg") center center no-repeat;
+.works__box:hover img {
+  -ms-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
 .signature__wrap {
   opacity: 0;
   position: absolute;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
-  -webkit-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
   background-color: rgba(0, 0, 0, 0.7);
 }
 .signature__wrap:hover {
   opacity: 1;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
 .works__signature {
   position: absolute;
@@ -306,7 +290,7 @@ textarea:focus {
   text-align: center;
 }
 .works__signature button {
-  width: 155px;
+  width: 180px;
   height: 55px;
   border: none;
   -webkit-border-radius: 50px;
