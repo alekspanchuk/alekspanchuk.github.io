@@ -1,3 +1,3 @@
 git add .
-git commit -m "add lesson-16"
+git commit -m "add paragraph to FAQ section__caption"
 git push -u origin master
