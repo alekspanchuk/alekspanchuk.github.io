@@ -212,6 +212,10 @@
 				text-decoration: none;
 				color: @c-grey;
 			}
+			&:hover, &:focus, &:visited, &:active {
+				text-decoration: none;
+				color: @c-grey;
+			}
 			span {
 				display: inline-block;
 				width: 16px;
@@ -404,7 +408,6 @@
 	}
 	.slider-arrow {
 		position: absolute;
-		// border: 1px solid #000;
 		.border-radius(50%);
 		font-size: 17px;
 		color: lighten(@black, 20%);

@@ -217,6 +217,13 @@ textarea:focus {
   text-decoration: none;
   color: #6d6d6d;
 }
+.process_box_button:hover,
+.process_box_button:focus,
+.process_box_button:visited,
+.process_box_button:active {
+  text-decoration: none;
+  color: #6d6d6d;
+}
 .process_box_button span {
   display: inline-block;
   width: 16px;
