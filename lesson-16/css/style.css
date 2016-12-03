@@ -210,19 +210,15 @@ textarea:focus {
   vertical-align: middle;
   color: #6d6d6d;
 }
+.process_box_button:hover,
+.process_box_button:focus {
+  text-decoration: none;
+  color: #6d6d6d;
+}
 .process_box_button:hover {
   -webkit-box-shadow: 0px 6px 14px 0px rgba(20, 20, 21, 0.09);
   -moz-box-shadow: 0px 6px 14px 0px rgba(20, 20, 21, 0.09);
   box-shadow: 0px 6px 14px 0px rgba(20, 20, 21, 0.09);
-  text-decoration: none;
-  color: #6d6d6d;
-}
-.process_box_button:hover,
-.process_box_button:focus,
-.process_box_button:visited,
-.process_box_button:active {
-  text-decoration: none;
-  color: #6d6d6d;
 }
 .process_box_button span {
   display: inline-block;

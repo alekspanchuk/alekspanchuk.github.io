@@ -207,14 +207,12 @@
 			line-height: 55px;
 			vertical-align: middle;
 			color: @c-grey;
-			&:hover {
-				.box-shadow(0px, 6px, 14px, 0px, rgba(20, 20, 21, 0.09));
+			&:hover, &:focus {
 				text-decoration: none;
 				color: @c-grey;
 			}
-			&:hover, &:focus, &:visited, &:active {
-				text-decoration: none;
-				color: @c-grey;
+			&:hover {
+				.box-shadow(0px, 6px, 14px, 0px, rgba(20, 20, 21, 0.09));
 			}
 			span {
 				display: inline-block;
