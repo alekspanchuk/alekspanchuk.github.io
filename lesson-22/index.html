@@ -223,7 +223,9 @@
 	</section>
 <!-- PARALLAX ICE AGE ========================= -->
 	<section class="parallax__iceage" data-parallax="scroll" data-image-src="./img/parallax/iceage.jpg">
-		
+		<ul id="scene">
+		  <li class="layer" data-depth="5.00"><img src="./img/parallax/acorn.png"></li>
+		</ul>
 	</section>
 <!-- FEATURED WORKS =========================== -->
 	<section class="works" id="Featured_Works">
@@ -594,10 +596,14 @@
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	  <script src="./js/bootstrap.min.js"></script>
 	  <!-- SVG modal windows -->
-	  <script src="js/snap.svg-min.js"></script>
-		<script src="js/main.js"></script>
+	  <script src="./js/snap.svg-min.js"></script>
+		<script src="./js/main.js"></script>
 		<script src="./js/fotorama.js"></script> <!-- fotorama slider -->
-		<script src="./js/paralax scrolling/parallax.min.js"></script>
+				<script src="./js/parallax-mouse/jquery.parallax.js"></script> <!-- connect before parallax bg -->
+		<script> 
+			$('#scene').parallax();
+		</script>
+		<script src="./js/parallax-scroll/parallax.min.js"></script>
   <!-- Slick Slider -->
 	  <script src="./libs/slick/slick.min.js"></script>
 	  <script>
@@ -644,7 +650,7 @@
 	 	 		return false;
 	 	 	});
 	 	});   	
-  </script>
+	  </script>
   <!-- Header hamburger menu -->
 		<script>
 			$(document).ready(function () {
@@ -676,6 +682,6 @@
 	        $('body,html').animate({scrollTop: top}, 700);
 	    });
 		</script>
-	<!-- Header video bakckground -->
+	<!-- Parallax mouse -->
 </body>
 </html>
