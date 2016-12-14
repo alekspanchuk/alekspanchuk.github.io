@@ -645,6 +645,9 @@ textarea:focus {
   color: #6d6d6d;
 }
 /* MAPS ======================================= */
+.maps {
+  background-color: #f5f5f5;
+}
 .maps__yandex,
 .maps__google {
   margin-bottom: 20px;
