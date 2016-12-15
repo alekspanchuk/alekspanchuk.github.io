@@ -142,6 +142,7 @@
 								<li class="mw__menu_item"><a href="#Services">Services</a></li>
 								<li class="mw__menu_item"><a href="#FAQ">FAQ</a></li>
 								<li class="mw__menu_item"><a href="#Clients_Said">Clients Said</a></li>
+								<li class="mw__menu_item"><a href="#Find_Us">Find_Us</a></li>
 							</ul>
 						</div>
 					</div>
@@ -566,7 +567,7 @@
 			</div>
 		</div>
 	</section>
-<!-- MAPS ===================================== -->	
+<!-- MAPS ===================================== -->
 	<section class="maps" id="Find_Us">
 		<div class="container">
 			<div class="row section__caption wow animated zoomIn">
@@ -624,7 +625,6 @@
 		<script src="./js/fotorama.js"></script> <!-- fotorama slider -->
 		<script src="./js/paralax_scrolling/parallax.min.js"></script>
 	  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-		
   <!-- Slick Slider -->
 	  <script src="./libs/slick/slick.min.js"></script>
 	  <script>
@@ -695,7 +695,7 @@
 	    $(".mw__menu_item").on("click","a", function (event) {
 	        //отменяем стандартную обработку нажатия по ссылке
 	        event.preventDefault();
-	        //забираем идентификатор бока с атрибута href
+	        //забираем идентификатор блока с атрибута href
 	        var id  = $(this).attr('href'),
 	        //узнаем высоту от начала страницы до блока на который ссылается якорь
 	            top = $(id).offset().top;
@@ -703,7 +703,7 @@
 	        $('body,html').animate({scrollTop: top}, 700);
 	    });
 		</script>
-	<!-- Настраиваем карту через JavaScript -->
+	<!-- Yandex Map -->
 		<script type="text/javascript">
 		//создаем переменные "Карта" и "Метка"
 		  ymaps.ready(init);
