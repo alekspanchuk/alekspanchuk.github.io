@@ -82,6 +82,13 @@ textarea:focus {
   color: #fd9b85;
 }
 /* HEADER-MENU */
+.header__top_menu_wrapper {
+  position: relative;
+  float: right;
+}
+.header__top_menu {
+  display: block;
+}
 .header__top_menu::before,
 .header__top_menu::after {
   display: block;
@@ -91,10 +98,6 @@ textarea:focus {
   -webkit-border-radius: 1px;
   -moz-border-radius: 1px;
   border-radius: 1px;
-}
-.header__top_menu_wrapper {
-  position: relative;
-  float: right;
 }
 .header__menu_stick {
   width: 34px;

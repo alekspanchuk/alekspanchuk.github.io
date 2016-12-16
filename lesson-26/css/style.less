@@ -104,7 +104,12 @@
 			color: lighten(@c-orange, 10%);
 		}
 	/* HEADER-MENU */
+		.header__top_menu_wrapper {
+			position: relative;
+			float: right;
+		}
 		.header__top_menu {
+			display: block;
 			&::before,
 			&::after {
 				display: block;
@@ -113,11 +118,6 @@
 				border: 2px solid @c-grey;
 				.border-radius(1px);
 			}
-		}
-		.header__top_menu_wrapper {
-			position: relative;
-			float: right;
-
 		}
 		.header__menu_stick { 
 			width: 34px;
