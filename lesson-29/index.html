@@ -666,6 +666,7 @@
 	 	 		}).done(function() {
 	 	 			$(this).find("input").val("");
 	 	 			$('#mw_form_header_username').text(', ' + $('input#username').val());
+	 	 			yaCounter26457244.reachGoal('form_submit');
 	 	 			$("#mw_form_header").modal("show");
 	 	 			$("#form_header").trigger("reset");
 	 	 		});
@@ -748,8 +749,9 @@
 		    (function (d, w, c) {
 		        (w[c] = w[c] || []).push(function() {
 		            try {
-		                w.yaCounter41667879 = new Ya.Metrika({
-		                    id:41667879,
+		            	// Нужно обязательно объявить здесь счетчик
+		                w.yaCounter26457244 = new Ya.Metrika({
+		                    id:26457244,
 		                    clickmap:true,
 		                    trackLinks:true,
 		                    accurateTrackBounce:true,
