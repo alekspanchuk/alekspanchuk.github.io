@@ -666,7 +666,7 @@
 	 	 		}).done(function() {
 	 	 			$(this).find("input").val("");
 	 	 			$('#mw_form_header_username').text(', ' + $('input#username').val());
-	 	 			yaCounter26457244.reachGoal('form_submit');
+	 	 			yaCounter41692559.reachGoal('header_form');
 	 	 			$("#mw_form_header").modal("show");
 	 	 			$("#form_header").trigger("reset");
 	 	 		});
@@ -701,7 +701,7 @@
 	        var id  = $(this).attr('href'),
 	        //узнаем высоту от начала страницы до блока на который ссылается якорь
 	            top = $(id).offset().top;
-	        //анимируем переход на расстояние - top за 1500 мс
+	        //анимируем переход на расстояние - top за 700 мс
 	        $('body,html').animate({scrollTop: top}, 700);
 	    });
 		</script>
@@ -711,14 +711,12 @@
 		  ymaps.ready(init);
 		  var myMap, 
 		  myPlacemark;
-
 		//Инициализируем нашу карту, задав ей координаты, устанавливаем масштаб карты
 		  function init(){ 
 		    myMap = new ymaps.Map("map", {
 		      center: [57.154332, 65.533510],
 		      zoom: 16,
 		    }); 
-
 		//Пишем свойства для нашей метки
 		    myPlacemark = new ymaps.Placemark([57.154332, 65.533510], {
 		      hintContent: 'Тут описание, которое всплывает при наведении',
@@ -740,18 +738,13 @@
 		  }
 		</script>
 	<!-- Yandex.Metrika -->
-		<!-- Yandex.Metrika informer -->
-		<a href="https://metrika.yandex.ru/stat/?id=41667879&amp;from=informer"
-		target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/41667879/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
-		style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" class="ym-advanced-informer" data-cid="41667879" data-lang="ru" /></a>
 		<!-- Yandex.Metrika counter -->
 		<script type="text/javascript">
 		    (function (d, w, c) {
 		        (w[c] = w[c] || []).push(function() {
 		            try {
-		            	// Нужно обязательно объявить здесь счетчик
-		                w.yaCounter26457244 = new Ya.Metrika({
-		                    id:26457244,
+		                w.yaCounter41692559 = new Ya.Metrika({
+		                    id:41692559,
 		                    clickmap:true,
 		                    trackLinks:true,
 		                    accurateTrackBounce:true,
@@ -773,6 +766,6 @@
 		        } else { f(); }
 		    })(document, window, "yandex_metrika_callbacks");
 		</script>
-		<noscript><div><img src="https://mc.yandex.ru/watch/41667879" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<noscript><div><img src="https://mc.yandex.ru/watch/41692559" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 </body>
 </html>
