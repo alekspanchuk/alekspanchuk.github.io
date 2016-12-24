@@ -1,5 +1,6 @@
 // === VARIABLES
 	var gulp 				 = require('gulp'),
+			watch 			 = require('gulp-watch'),
 			sass 				 = require('gulp-sass'), // SASS to CSS
 			browserSync  = require('browser-sync'),
 			concat			 = require('gulp-concat'), // merge files
@@ -10,20 +11,23 @@
 			imagemin 		 = require('gulp-imagemin'), // img optimize
 			pngquant     = require('imagemin-pngquant'),
 			cache				 = require('gulp-cache'),
-			autoprefixer = require('gulp-autoprefixer');
+			autoprefixer = require('gulp-autoprefixer'),
+			runSequence  = require('run-sequence');
 // === SASS
 	gulp.task('sass', function () {
-		gulp.src('app/sass/**/*.sass')
+		gulp.src(['app/sass/**/*.sass', '!app/sass/libs.sass'])
 			.pipe(sass())
 			.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
+			.pipe(gulp.dest('app/css/'))
+			.pipe(cssnano())
+			.pipe(rename({suffix: '.min'}))
 			.pipe(gulp.dest('app/css/'))
 	})
 // === CSS-LIBS
 	gulp.task('css-libs', function () {
-		return gulp.src([
-			'app/css/libs.css',
-			'app/css/main.css'
-			])
+		return gulp
+			.src('app/sass/libs.sass')
+			.pipe(sass())
 			.pipe(cssnano())
 			.pipe(rename({suffix: '.min'}))
 			.pipe(gulp.dest('app/css/'))
@@ -38,8 +42,7 @@
 // === SCRIPTS
 	gulp.task('scripts', function () {
 		return gulp.src([
-			'app/libs/jquery/dist/jquery.min.js',
-			'app/libs/magnific-popup/dist/jquery.magnific-popup.min.js'
+			// 'app/libs/jquery/dist/jquery.min.js',
 		])
 			.pipe(concat('libs.min.js'))
 			.pipe(uglify())
@@ -73,12 +76,31 @@
 	gulp.task('clearcache', function () {
 		return cache.clearAll();
 	})
+// === DEFAULT
+	gulp.task('default', () => {
+		runSequence([
+				'sass',
+				'css-libs',
+				'userscript',
+				'scripts'],
+			'browser-sync',
+			'watch'
+		);
+	});
 // === WATCH
-	gulp.task('watch', ['browser-sync', 'sass', 'css-libs', 'scripts', 'userscript'], function () {
-		gulp.watch('app/sass/**/*.sass', ['sass']);
-		gulp.watch('app/css/**/*.css', ['css-libs', browserSync.reload]);
-		gulp.watch('app/*.html', browserSync.reload);
-		gulp.watch('app/js/**/*.js', ['userscript', browserSync.reload]);
+	gulp.task('watch', () => {
+		global.watch = true;
+
+		watch('app/sass/**/*.sass', () => {
+			runSequence('sass');
+		});
+
+		watch('app/css/**/*.css', () => {
+			runSequence('css-libs', browserSync.reload);
+		});
+
+		watch('app/*.html', browserSync.reload);
+		watch('app/js/**/*.js', ['userscript', browserSync.reload]);
 	})
 // === BUILD
 	gulp.task('build', ['clean', 'sass', 'scripts', 'css-libs', 'userscript', 'img'], function () {
