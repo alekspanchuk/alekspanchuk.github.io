@@ -22,7 +22,6 @@
 	html {
 	  box-sizing: border-box;
 	}
-
 	*,
 	*:before,
 	*:after {
@@ -53,25 +52,43 @@
 	}
 /* FONTS ====================================== */
 	@font-face {
-	    font-family: 'poppinsbold';
-	    src: url('../fonts/poppins-bold-webfont.woff2') format('woff2'),
-	         url('../fonts/poppins-bold-webfont.woff') format('woff');
-	    font-weight: normal;
-	    font-style: normal;
+		font-family: 'Poppins';
+		src: url('../fonts/subset-Poppins-Light.woff2') format('woff2'),
+				 url('../fonts/subset-Poppins-Light.woff') format('woff');
+		font-weight: 300;
+		font-style: normal;
 	}
+
 	@font-face {
-	    font-family: 'poppinsmedium';
-	    src: url('../fonts/poppins-medium-webfont.woff2') format('woff2'),
-	         url('../fonts/poppins-medium-webfont.woff') format('woff');
-	    font-weight: normal;
-	    font-style: normal;
+		font-family: 'Poppins';
+		src: url('../fonts/subset-Poppins-Regular.woff2') format('woff2'),
+				 url('../fonts/subset-Poppins-Regular.woff') format('woff');
+		font-weight: normal;
+		font-style: normal;
 	}
+
 	@font-face {
-	    font-family: 'poppinsregular';
-	    src: url('../fonts/poppins-regular-webfont.woff2') format('woff2'),
-	         url('../fonts/poppins-regular-webfont.woff') format('woff');
-	    font-weight: normal;
-	    font-style: normal;
+		font-family: 'Poppins';
+		src: url('../fonts/subset-Poppins-SemiBold.woff2') format('woff2'),
+				 url('../fonts/subset-Poppins-SemiBold.woff') format('woff');
+		font-weight: 600;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Poppins';
+		src: url('../fonts/subset-Poppins.woff2') format('woff2'),
+				 url('../fonts/subset-Poppins.woff') format('woff');
+		font-weight: bold;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Poppins';
+		src: url('../fonts/subset-Poppins-Medium.woff2') format('woff2'),
+				 url('../fonts/subset-Poppins-Medium.woff') format('woff');
+		font-weight: 500;
+		font-style: normal;
 	}
 /* FONTELLO ICON-FONT ========================= */
 	@font-face {
@@ -157,27 +174,28 @@
 	.icon-blog_arrow-left:before { content: '\e818'; } /* '' */
 	.icon-serv_wp:before { content: '\e819'; } /* '' */
 /* MIXINS ===================================== */
-	.poppins-reg {
-		font-family: "poppinsregular", sans-serif;
+	.poppins300 {
+		font-family: 'Poppins', sans-serif;
+		font-weight: 300;
 	}
-	.poppins-medium {
-		font-family: "poppinsmedium", sans-serif;
+	.poppins400 {
+		font-family: 'Poppins', sans-serif;
+		font-weight: normal;
 	}
-	.poppins-bold {
-		font-family: "poppinsbold", sans-serif;
+	.poppins500 {
+		font-family: 'Poppins', sans-serif;
+		font-weight: 500;
 	}
-	.border-radius(@radius) {
-		border-radius: @radius;
-	}
-	.box-shadow(@a @b @c @d @e) {
-		box-shadow: @a @b @c @d @e;
-	}
-	.trf-translate(@x @y) {
-		transform: translate(@x, @y);
+	.poppins600 {
+		font-family: 'Poppins', sans-serif;
+		font-weight: 600;
+	}	
+	.poppins700 {
+		font-family: 'Poppins', sans-serif;
+		font-weight: bold;
 	}
 	.clearfix {
-	  zoom:1;
-	  &:before, &:after { content:""; display:table; }
+	  &:before, &:after { content:" "; display:table; }
 	  &:after { clear: both; }
 	}
 	.center {
@@ -188,16 +206,31 @@
 		position: absolute;
 		left: 50%;
 		top: 50%;
-		.trf-translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
+	.placeholder_color(@color) {
+		&:-moz-placeholder,
+		&::-moz-placeholder {
+			color: @color;
+			opacity: 1;
+		}
+		&::-webkit-input-placeholder {
+			color: @color;
+		}
 	}
 /* VARS ======================================= */
+	// common
 	@blue: #63def6;	
+	// text
+	@header: #585858;
+	@text: #777777;
+	@price-text: #aaa;
 	// 
 /* COMMON STYLE =============================== */
 	body {
-		.poppins-reg;
+		.poppins400;
 		font-size: 16px;
-		line-height: 28px;
+		line-height: 1.75;
 	}
 	ul {
 		margin: 0;
@@ -217,7 +250,6 @@
 			background-image: url(../img/header/background.jpg);
 			background-size: cover;
 			background-position: center;
-			.poppins-reg;
 			color: #fff;
 		}
 		.header__container {
@@ -237,9 +269,6 @@
 			}
 			.header__menu {
 				float: right;
-				.active {
-					.poppins-bold;
-				}
 			}
 			.header__menu_item {
 				display: inline-block;
@@ -249,9 +278,13 @@
 					text-decoration: none;
 					text-transform: uppercase;
 					font-size: 16px;
+					color: #f1f1f1;
 				}
 				&:hover {
 					opacity: 0.6;
+				}
+				&.active {
+					.poppins700;
 				}
 			}
 			.header__actions {
@@ -276,19 +309,19 @@
 			position: absolute;
 			top: 43%;
 			left: 50%;
-			.trf-translate(-50%, -50%);
+			transform: translate(-50%, -50%);
 			text-align: center;
 		}
 			.header__caption {
 				text-transform: uppercase;
-				.poppins-bold;
-				font-size: 36px;
+				font-size: 50px;
+				.poppins700;
 			}
 			.header__text {
-				max-width: 700px;
+				max-width: 680px;
 				margin-top: 5%;
 				font-size: 20px;
-				line-height: 35px;
+				.center;
 			}
 			.header__button {
 				display: inline-block;
@@ -320,31 +353,30 @@
 				&:last-child {
 					margin-bottom: 120px;
 				}
+				text-align: center;
 			}
 				.about-card__icon {
 					width: 100px;
 					height: 100px;
-
 					margin-bottom: 50px;
 					.center;
 					border: 2px solid @blue;
-					.border-radius(50%);
+					border-radius: 50%;
+					color: rgba(0,0,0,0.5);
 					i {
 						display: block;
 						font-size: 36px;
 						line-height: 100px;
-						text-align: center;
 					}
 				}
 				.about-card__caption {
 					margin-bottom: 40px;
 					font-size: 20px;
-					.poppins-medium;
-					text-align: center;
+					color: @header;
 				}
 				.about-card__text {
 					font-size: 16px;
-					text-align: center;
+					color: @text;
 				}
 	// content
 		.about__content {
@@ -372,13 +404,14 @@
 					margin-right: 142px;
 				}
 					.content__caption {
-						.poppins-medium;
 						font-size: 33px;
 						line-height: 71px;
+						color: @header;
 					}	
 					.content__text {
 						margin-top: 38px;
 						font-size: 16px;
+						color: @text;
 					}
 					.content__button {
 						padding: 16px 42px;
@@ -388,6 +421,7 @@
 						color: #fff;
 						font-size: 18px;
 						text-align: center;
+						.poppins500;
 						&:hover {
 							opacity: 0.6;
 						}
@@ -399,8 +433,9 @@
 			margin-top: 120px;
 			h2 {
 				font-size: 30px;
-				.poppins-medium;
 				text-align: center;
+				.poppins400;
+				color: @header;
 			}
 		}
 		.works__desc {
@@ -409,25 +444,26 @@
 			margin-bottom: 80px;
 			font-size: 16px;
 			text-align: center;
+			.poppins300;
+			color: @text;
 			.center;
 		}
 	// menu
 		.works_menu__list {
-			// margin-top: 80px;
 			margin-bottom: 20px;
 			text-align: center;
-			.active {
-				color: @blue;
-				.poppins-bold;
-			}
 		}
 			.works_menu__item {
 				display: inline-block;
 				margin-right: 50px;
+				.poppins300;
+				color: @text;
 				&:last-child {
 					margin-right: 0;
 				}
-				.active,
+				&.active {
+					color: @blue;
+				}
 				&:hover {
 					opacity: 0.6;
 				}
@@ -506,10 +542,12 @@
 		  position: absolute;
 		  right: 0;
 		  top: 50%;
-		  .trf-translate(0, -50%);
+		  transform: translate(0, -50%);
 		  border-radius: 3px 0 0 3px;
+ 			color: #b0b0b0;
 		}
 		.action__caption { 
+		  color: #b0b0b0;
 		  min-width: 225px;
 		  height: 110px;
 		  float: left;
@@ -518,8 +556,12 @@
 		  color: #fff;
 		  text-align: right;
 		  padding: 25px 35px;
-		  &:first-child {
+		  div {
+ 			  color: #b0b0b0;
+			  &:first-child  {
 		    margin-bottom: 5px;
+		    color: #e4d288;
+		  	}
 		  }
 		}
 		.action__like,
@@ -530,12 +572,10 @@
 		  display: block;
 		  border-right: 1px solid #473e3e;
 		  background-color: #55565b;
-		  color: #aea;
 		  a {
 		  	position: absolute;
 				left: 10px;
-				top: 15px;
-				color: #fff;
+				top: 8px;
 				font-size: 24px;
 				&:hover {
 					opacity: 0.6;
@@ -555,10 +595,12 @@
 				display: inline-block;
 				padding: 12px 42px;
 				font-size: 18px;
-				border: 1px solid #000;
-			}
-			&:hover {
-				opacity: 0.6;
+				.poppins500;
+				color: @header;
+				border: 1px solid #888888;
+				&:hover {
+					opacity: 0.6;
+				}
 			}
 		}
 /* SERVICES =================================== */
@@ -580,11 +622,11 @@
 			width: 33%;
 			float: left;
 			background-color: #f7f7f7;
+			text-align: center;
+			border: 1px solid #fff;
 			&:hover {
 				background-color: #fff;
 			}
-			text-align: center;
-			border: 1px solid #fff;
 			&:last-child {
 				margin-bottom: 120px;
 			}
@@ -598,13 +640,15 @@
 		.serv-card__caption {
 			font-size: 20px;
 			line-height: 20px;
+			color: @header;
 		}
 		.serv-card__desc {
-			max-width: 222px;
+			max-width: 230px;
 			margin-top: 35px;
 			margin-bottom: 22px;
 			.center;
 			font-size: 16px;
+			color: @text;
 		}
 		.serv-card__link {
 			display: block;
@@ -640,7 +684,7 @@
 				&:last-child {
 					margin-bottom: 0;
 				}
-				filter: blur(5px);
+				filter: blur(3px);
 				border-radius: 50%;
 				cursor: pointer;
 				button {
@@ -704,7 +748,7 @@
 			float: left;
 			margin-top: 200px;
 			margin-left: 75px;
-			font-size: 38px;
+			font-size: 30px;
 		}
 		.fback__slider {
 			float: left;
@@ -738,7 +782,7 @@
 		}
 		.slider__name {
 			margin-bottom: 5px;
-			.poppins-medium;
+			.poppins600;
 		}
 /* PRICE ====================================== */
 	// caption
@@ -763,6 +807,7 @@
 			border: 1px solid #e2e2e2;
 			box-sizing: border-box;
 			text-align: center;
+			.poppins500;
 			&:first-child .price-card__item__desc:last-child {
 				border-bottom: none;
 			}
@@ -784,7 +829,7 @@
 			margin-top: 50px;
 			margin-bottom: 15px;
 			font-size: 20px;
-			.poppins-medium;
+			color: @header;
 		}
 		.price-card__stick {
 			display: block;
@@ -797,15 +842,15 @@
 			margin-top: 20px;
 			padding-bottom: 38px;
 			border-bottom: 1px solid #e2e2e2;
+			color: @price-text;
 			span {
 				color: @blue;
-				.poppins-bold;
 			}
 		}
 		.price-card__item__caption {
 			margin-top: 24px;
 			text-transform: uppercase;
-			.poppins-medium;
+			color: @header;
 			&:before {
 				font-family: 'fontello';
 				color: #7bbb55;
@@ -822,6 +867,8 @@
 			border-bottom: 1px solid #e2e2e2;
 			font-size: 14px;
 			line-height: 24px;
+			.poppins400;
+			color: @price-text;
 			&:nth-last-child(2) {
 				border-bottom: none;
 			}
@@ -838,7 +885,7 @@
 			border: 1px solid @blue;
 			text-transform: uppercase;
 			font-size: 13px;
-			.poppins-bold;
+			.poppins700;
 			color: @blue;
 			&:hover {
 				color: #fff;
@@ -922,17 +969,16 @@
 			font-size: 20px;
 			text-transform: uppercase;
 			color: #ec826a;
-			.poppins-medium;
 			margin-bottom: 20px;
 		}
 		.slider-item__text {
-			font-size: 16px;
 			line-height: 25px;
 			margin-bottom: 12px;
 		}
 		.slider-item__sign {
-			font-size: 14px;
 			margin-bottom: 45/14em;
+			font-size: 14px;
+			color: #f7f7f7;
 		}
 	// slick slider re-style
 		.slick-slide {
@@ -968,8 +1014,10 @@
 				padding-left: 30px;
 				padding-right: 60px;
 				border: none;
-				.poppins-reg;
 				font-size: 16px;
+				.poppins300;
+				.placeholder_color(@text);
+				color: @text;
 				line-height: 28px;
 				&:focus {
 					outline: none;
@@ -998,8 +1046,8 @@
 			border-radius: 3px;
 			background-color: @blue;
 			text-transform: uppercase;
-			.poppins-bold;
 			font-size: 16px;
+			.poppins600;
 			color: #fff;
 			&:hover {
 				opacity: 0.6;
@@ -1026,11 +1074,10 @@
 			float: left;
 			display: inline-block;
 			vertical-align: top;
-			.poppins-medium;
-			font-size: 20px;
 		}
 		.menu-lvl1__caption {
 			margin-bottom: 25px;
+			font-size: 20px;
 		}
 	// menu lvl2
 		.menu-lvl2 {
@@ -1038,9 +1085,8 @@
 		}
 			.menu-lvl2__item {
 				margin-bottom: 15px;
-				.poppins-reg;
 				font-size: 18px;
-				color: #aaa;
+				color: @price-text;
 				&:hover {
 					opacity: 0.8;
 				}
@@ -1051,13 +1097,14 @@
 				width: 100%;
 				display: block;
 				margin-bottom: 45px;
-				padding-bottom: 20px;
+				padding-bottom: 10px;
 				background-color: transparent;
 				border: none;
 				border-bottom: 1px solid #bbb;;
-				.poppins-reg;
 				font-size: 16px;
-				color: #aaa;
+				.poppins400;
+				.placeholder_color(@price-text);
+				color: @price-text;
 				&:focus {
 					outline: none;
 					border-bottom: 1px solid #ebebeb;
@@ -1069,7 +1116,6 @@
 				background-color: transparent;
 				border: 1px solid #ebebeb;
 				color: #fff;
-				.poppins-reg;
 				font-size: 14px;
 				&:hover {
 					opacity: 0.8;
@@ -1079,7 +1125,7 @@
 	// social
 		.footer__social {
 			margin-bottom: 100px;
-			color: #aaa;
+			color: @price-text;
 			clear: both;
 			a {
 				margin-right: 15px;
