@@ -1049,7 +1049,7 @@ a {
 }
 .fback__container {
   width: 90%;
-  max-width: 68.75em;
+  max-width: 66.25em;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1061,10 +1061,85 @@ a {
 .fback__container:after {
   clear: both;
 }
+.fback__caption {
+  float: left;
+  margin-top: 6.66666667em;
+  margin-left: 2.5em;
+  font-size: 1.875em;
+}
+@media screen and (max-width: 920px) {
+  .fback__caption {
+    margin-top: 2.66666667em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .fback__caption {
+    margin-left: 1.4375em;
+  }
+}
+@media screen and (max-width: 480px) {
+  .fback__caption {
+    margin-left: 0;
+    margin-top: 15px;
+  }
+}
+.fback__slider {
+  float: left;
+  width: 77%;
+  margin-left: 4.6875em;
+  margin-bottom: 11.25em;
+}
+@media screen and (max-width: 1080px) {
+  .fback__slider {
+    margin-bottom: 8.125em;
+  }
+}
+@media screen and (max-width: 920px) {
+  .fback__slider {
+    margin-bottom: 6.25em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .fback__slider {
+    margin-left: 2.5em;
+  }
+}
+@media screen and (max-width: 480px) {
+  .fback__slider {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 .fback__people {
   float: left;
   margin-top: 4.6875em;
-  margin-bottom: 4.6875em;
+}
+@media screen and (max-width: 920px) {
+  .fback__people {
+    margin-top: 4.375em;
+  }
+}
+@media screen and (max-width: 480px) {
+  .fback__people {
+    float: none;
+  }
+}
+.fback__dots {
+  float: left;
+  margin-top: 16.5em;
+  margin-bottom: 16.5em;
+  margin-left: 4.0625em;
+}
+@media screen and (max-width: 920px) {
+  .fback__dots {
+    display: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  .people__img {
+    text-align: center;
+  }
 }
 .people__img li {
   position: relative;
@@ -1076,8 +1151,31 @@ a {
   cursor: pointer;
   background-size: cover;
 }
+@media screen and (max-width: 920px) {
+  .people__img li {
+    width: 4.0625em;
+    height: 4.0625em;
+    margin-bottom: 1.25em;
+  }
+}
+@media screen and (max-width: 480px) {
+  .people__img li {
+    width: 5.3125em;
+    height: 5.3125em;
+  }
+}
 .people__img li:last-child {
   margin-bottom: 0;
+}
+@media screen and (max-width: 480px) {
+  .people__img li {
+    display: inline-block;
+    margin-bottom: 0.3125em;
+    margin-right: 15px;
+  }
+  .people__img li:last-child {
+    margin-bottom: 0.3125em;
+  }
 }
 .people__img li button {
   display: none;
@@ -1100,17 +1198,6 @@ a {
 .people__img li.slick-active {
   filter: blur(0);
 }
-.fback__dots {
-  float: left;
-  margin-top: 16.5em;
-  margin-bottom: 16.5em;
-  margin-left: 4.0625em;
-}
-@media screen and (max-width: 920px) {
-  .fback__dots {
-    display: none;
-  }
-}
 .fback__dots-item {
   float: left;
 }
@@ -1131,18 +1218,6 @@ a {
 }
 .fback__dots-item li.slick-active {
   background-color: transparent;
-}
-.fback__caption {
-  float: left;
-  margin-top: 6.66666667em;
-  margin-left: 2.5em;
-  font-size: 1.875em;
-}
-.fback__slider {
-  float: left;
-  width: 52.5em;
-  margin-left: 4.6875em;
-  margin-bottom: 11.25em;
 }
 .fback__slider-item {
   font-size: 1em;
@@ -1169,6 +1244,11 @@ a {
   font-size: 1.25em;
   line-height: 1.75;
   font-style: italic;
+}
+@media screen and (max-width: 720px) {
+  .slider__content {
+    font-size: 1em;
+  }
 }
 .slider__name {
   margin-bottom: 0.3125em;
@@ -1630,7 +1710,7 @@ a {
 }
 .menu-lvl1__item:last-child {
   width: 22%;
-  min-width: 145px;
+  min-width: 125px;
 }
 @media screen and (max-width: 749px) {
   .menu-lvl1__item:last-child {
