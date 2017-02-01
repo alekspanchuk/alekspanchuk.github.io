@@ -388,9 +388,7 @@ a {
 .header {
   position: relative;
   min-height: 100vh;
-  background-image: url(../img/header/background.jpg);
-  background-size: cover;
-  background-position: center;
+  background-color: transparent;
   color: #fff;
 }
 .header__container {
@@ -464,6 +462,7 @@ a {
   font-weight: bold;
 }
 .header__actions {
+  position: relative;
   float: right;
   color: #fff;
   font-size: 1.3125em;
@@ -497,15 +496,13 @@ a {
     display: inline-block;
   }
 }
-@media screen and (max-width: 840px) {
-  .header__hamburger {
-    display: inline-block;
-  }
-}
 @media screen and (max-width: 1100px) {
   .header__hamburger {
     margin-left: 0.8125em;
   }
+}
+.header__hamburger:hover {
+  opacity: 0.6;
 }
 .header__hamburger:before,
 .header__hamburger:after {
@@ -518,6 +515,29 @@ a {
 }
 .header__hamburger:before {
   top: 10px;
+}
+.hamburger__menu_list {
+  position: absolute;
+  top: 1.5625em;
+  right: 0.0625em;
+  z-index: 1;
+  display: none;
+  padding: 1px;
+  border: 1px solid #585858;
+  border-radius: 3px;
+  background-color: #f7f7f7;
+  font-size: 24px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+.hamburger__menu_list li {
+  padding-left: 30px;
+  padding-right: 30px;
+  border-bottom: 1px solid #585858;
+  color: #585858;
+}
+.hamburger__menu_list li:last-child {
+  border-bottom: none;
 }
 .header__content {
   width: 90%;
@@ -667,6 +687,7 @@ a {
   width: 30%;
   font-size: initial;
   line-height: initial;
+  line-height: 1.75;
   transform: translate(0, -50%);
 }
 @media screen and (max-width: 1450px) {
@@ -917,7 +938,6 @@ a {
   clear: both;
   padding-top: 3.75em;
   text-align: center;
-  border-radius: 3px;
 }
 .works__button .button__inner {
   display: inline-block;
@@ -927,6 +947,7 @@ a {
   font-weight: 500;
   color: #585858;
   border: 1px solid #888888;
+  border-radius: 3px;
 }
 .works__button .button__inner:hover {
   opacity: 0.6;
@@ -1038,6 +1059,10 @@ a {
     margin-top: 8px;
     margin-bottom: 29px;
   }
+}
+.serv-card__link:hover {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
 }
 /* FEEDBACK =================================== */
 .fback {

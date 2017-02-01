@@ -5,9 +5,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Creative Agency</title>
+  <title>Innovant</title>
 <!-- ==================================== LINKS -->
 	<link rel="stylesheet" type="text/css" href="./libs/slick_slider/slick.css">
+	<link rel="stylesheet" type="text/css" href="./libs/magnific-popup/magnific-popup.css">
   <link rel="stylesheet" href="./css/style.css">
   <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -16,9 +17,9 @@
 </head>
 <body>
 <!-- HEADER =================================== -->
-	<header class="header">
+	<header class="header parallax-window" id="Home" data-parallax="scroll" data-image-src="./img/header/background.jpg">
 		<div class="header__container">
-		<!-- header top -->
+	<!-- header top -->
 			<div class="header__top">
 				<a class="header__logo" href="#">
 					<img src="./img/header/logo.png" alt="Innovant">
@@ -27,22 +28,27 @@
 					<div class="header__actions">
 						<a href="#"><i class="header__basket icon-header_cart"></i></a>
 						<a href="#"><i class="header__search icon-header_search"></i></a>
-						<a href="#" class="header__hamburger">
-							<span></span>
-						</a>
+						<a href="#" class="header__hamburger"></a>
+						<ul class="hamburger__menu_list">
+							<li class="hamburger__menu_item"><a href="#Home">Home</a></li>
+							<li class="hamburger__menu_item"><a href="#About">About</a></li>
+							<li class="hamburger__menu_item"><a href="#Portfolio">Portfolio</a></li>
+							<li class="hamburger__menu_item"><a href="#Services">Services</a></li>
+							<li class="hamburger__menu_item"><a href="#Blog">Blog</a></li>
+							<li class="hamburger__menu_item"><a href="#Contact">Contact</a></li>
+						</ul>
 					</div>
 					<ul class="header__menu_list">
-						<li class="header__menu_item active"><a href="#">Home</a></li>
-						<li class="header__menu_item"><a href="#">About</a></li>
-						<li class="header__menu_item"><a href="#">Portfolio</a></li>
-						<li class="header__menu_item"><a href="#">Sevices</a></li>
-						<li class="header__menu_item"><a href="#">Blog</a></li>
-						<li class="header__menu_item"><a href="#">Contact</a></li>
+						<li class="header__menu_item active"><a href="#Home">Home</a></li>
+						<li class="header__menu_item"><a href="#About">About</a></li>
+						<li class="header__menu_item"><a href="#Portfolio">Portfolio</a></li>
+						<li class="header__menu_item"><a href="#Services">Services</a></li>
+						<li class="header__menu_item"><a href="#Blog">Blog</a></li>
+						<li class="header__menu_item"><a href="#Contact">Contact</a></li>
 					</ul>	
-
 				</nav>
 			</div>
-		<!-- header content -->
+	<!-- header content -->
 			<div class="header__content">
 				<h1 class="header__caption">We Create Creative Design</h1>
 				<p class="header__text">When Creative Guys Like us Get Together, They Bring Smile on Users Face</p>
@@ -51,7 +57,7 @@
 		</div>
 	</header>
 <!-- ABOUT ==================================== -->
-	<section class="about">
+	<section class="about" id="About">
 	<!-- cards -->
 		<div class="about__container">
 			<div class="about__card">
@@ -103,14 +109,12 @@
 			<div class="about__content-wrap">
 				<h2 class="content__caption">About Innovant Design</h2>
 				<p class="content__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.<br><br>Pallamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidat  ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-				<a href="#" class="content__button">Learn More</a>
+				<a href="#Portfolio" class="content__button">Learn More</a>
 			</div>
-
-		</div>
 		</div>
 	</section>
 <!-- PORTFOLIO ================================ -->
-	<section class="works">
+	<section class="works" id="Portfolio">
 	<!-- caption -->
 		<header class="works__caption">
 			<h2>Our Awesome Portfolio</h2>
@@ -131,7 +135,7 @@
 	<!-- cards -->
 		<ul class="works__card_list">
 			<li class="works__card_item">
-				<img class="works_card__img" src="./img/portfolio/01.jpg">
+				<img class="works_card__img" src="./img/portfolio/01.jpg" alt="Portfolio Image">
 				<div class="works_card__action">
 			  	<div class="action__wrapper">
 					  <div class="action__caption">
@@ -144,7 +148,7 @@
 				</div>
 			</li>
 			<li class="works__card_item">
-				<img class="works_card__img" src="./img/portfolio/02.jpg">
+				<img class="works_card__img" src="./img/portfolio/02.jpg" alt="Portfolio Image">
 				<div class="works_card__action">
 			  	<div class="action__wrapper">
 					  <div class="action__caption">
@@ -157,7 +161,7 @@
 				</div>
 			</li>
 			<li class="works__card_item">
-				<img class="works_card__img" src="./img/portfolio/03.jpg">
+				<img class="works_card__img" src="./img/portfolio/03.jpg" alt="Portfolio Image">
 				<div class="works_card__action">
 			  	<div class="action__wrapper">
 					  <div class="action__caption">
@@ -170,7 +174,7 @@
 				</div>
 			</li>
 			<li class="works__card_item">
-				<img class="works_card__img" src="./img/portfolio/04.jpg">
+				<img class="works_card__img" src="./img/portfolio/04.jpg" alt="Portfolio Image">
 				<div class="works_card__action">
 			  	<div class="action__wrapper">
 					  <div class="action__caption">
@@ -183,7 +187,7 @@
 				</div>
 			</li>
 			<li class="works__card_item">
-				<img class="works_card__img" src="./img/portfolio/05.jpg">
+				<img class="works_card__img" src="./img/portfolio/05.jpg" alt="Portfolio Image">
 				<div class="works_card__action">
 			  	<div class="action__wrapper">
 					  <div class="action__caption">
@@ -196,7 +200,7 @@
 				</div>
 			</li>
 			<li class="works__card_item">
-				<img class="works_card__img" src="./img/portfolio/06.jpg">
+				<img class="works_card__img" src="./img/portfolio/06.jpg" alt="Portfolio Image">
 				<div class="works_card__action">
 			  	<div class="action__wrapper">
 					  <div class="action__caption">
@@ -212,7 +216,7 @@
 		<div class="works__button"><a href="#" class="button__inner">Load More</a></div>
 	</section>
 <!-- SERVICES ================================= -->
-	<section class="serv">
+	<section class="serv" id="Services">
 	<!-- caption -->
 		<header class="serv__caption">
 			<h2>Our Service</h2>
@@ -421,7 +425,7 @@
 		</div>
 	</section>
 <!-- BLOG ===================================== -->
-	<section class="blog">
+	<section class="blog" id="Blog">
 	<!-- caption -->
 		<header class="blog__caption">
 			<h2>From the Blog</h2>
@@ -501,14 +505,14 @@
 		</div>
 	</section>
 <!-- CONTANCT ================================= -->
-	<section class="contact">
+	<section class="contact" id="Contact">
 	<!-- caption -->
 		<header class="contact__caption">
 			<h2>Join Our Mailing List</h2>
 		</header>
 		<p class="contact__desc">We are passionate about the web and about enabling creators to make a living doing what they love.</p>
 	<!-- form -->	
-		<form action="" method="POST" class="contact__form">
+		<form method="POST" class="contact__form">
 			<input type="hidden" name="from" value="contact">
 			<div class="contact__input contact__input--name">
 				<input type="text" name="username" placeholder="Name" required="">
@@ -559,8 +563,6 @@
 						<input type="email" name="email" placeholder="Email" required="">
 						<button class="footer__button" type="submit">Subscribe now</button>
 					</form>
-				
-					</form>
 				</li>
 			</ul>
 			<div class="footer__social">
@@ -575,45 +577,11 @@
 <!-- ========================================== -->
 <!-- ================================== SCRIPTS -->
 	<!-- external scripts -->
-		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="./libs/slick_slider/slick.min.js"></script>
+		<script src="./libs/magnific-popup/jquery.magnific-popup.min.js"></script>
+		<script src="./libs/parallax/parallax.min.js"></script>
     <script src="./js/wow.min.js"></script>
 		<script src="./js/main.js"></script>
-	<!-- wow.js -->
-    <script>
-	    new WOW().init();
-    </script>	
-  <!-- Header hamburger menu -->
-		<script>
-			$(document).ready(function () {
-				var menu = $('.mw__menu');
-		/* Hide menu when click out of menu*/
-				$(document).mouseup(function (e) {
-				    if (menu.has(e.target).length === 0){
-				        menu.hide();
-				    }
-				});
-		/* Show menu when hamburger clixk */
-				$('.header__top_menu').click(function () {
-					menu.show();
-				})
-		/* Hide Menu when click menu item */
-				$('.mw__menu_item').click(function () {
-					menu.hide();
-				})
-			})
-		/* Smooth transition for menu */
-	    $(".mw__menu_item").on("click","a", function (event) {
-	        //отменяем стандартную обработку нажатия по ссылке
-	        event.preventDefault();
-	        //забираем идентификатор блока с атрибута href
-	        var id  = $(this).attr('href'),
-	        //узнаем высоту от начала страницы до блока на который ссылается якорь
-	            top = $(id).offset().top;
-	        //анимируем переход на расстояние - top за 700 мс
-	        $('body,html').animate({scrollTop: top}, 700);
-	    });
-		</script>
 </body>
 </html>

@@ -277,9 +277,10 @@
 		.header {
 			position: relative;
 			min-height: 100vh;
-			background-image: url(../img/header/background.jpg);
-			background-size: cover;
-			background-position: center;
+			// background-image: url(../img/header/background.jpg);
+			// background-size: cover;
+			// background-position: center;
+			background-color: transparent;
 			color: #fff;
 		}
 		.header__container {
@@ -326,6 +327,7 @@
 			}
 		}
 		.header__actions {
+			position: relative;
 			float: right;
 			color: #fff;
 			font-size: 21/16em;
@@ -345,7 +347,6 @@
 		}
 	// hamburger menu
 		.header__hamburger {
-			position: relative;
 			display: none;
 			@media screen and (max-width: 840px) { display: inline-block; }
 			width: 21px;
@@ -353,11 +354,11 @@
 			position: relative;
 			top: 3px;
 			border-bottom: 3px solid #fff;
-
-			@media screen and (max-width: 840px) { display: inline-block; }
 			margin-left: 40/15em;
 			@media screen and (max-width: 1100px) { margin-left: 13/16em; }
-
+			&:hover {
+				opacity: 0.6;
+			}
 			&:before, &:after {
 				position: relative;
 				content: '';
@@ -368,6 +369,28 @@
 			}
 			&:before {
 				top: 10px;
+			}
+		}
+		.hamburger__menu_list {
+			position: absolute;
+			top: 25/16em;
+			right: 1/16em;
+			z-index: 1;
+			display: none;
+			padding: 1px;
+			border: 1px solid @header;
+			border-radius: 3px;
+			background-color: #f7f7f7;
+			font-size: 24px;
+			.poppins500;
+			li {
+				padding-left: 30px;
+				padding-right: 30px;
+				border-bottom: 1px solid @header;
+				&:last-child {
+					border-bottom: none;
+				}
+				color: @header;
 			}
 		}
 	// content
@@ -485,6 +508,7 @@
 			top: 49%;
 			width: 30%;
 			.fontinit;
+			line-height: 1.75;
 			@media screen and (max-width: 1450px) {	width: 40%; font-size: 14px; }
 			@media screen and (max-width: 1120px) { width: 45%; left: 52%; font-size: 13px; }
 			@media screen and (max-width: 1070px) { font-size: 12px; }
@@ -686,7 +710,6 @@
 			clear: both;
 			padding-top: 60/16em;
 			text-align: center;
-			border-radius: 3px;
 			.button__inner {
 				display: inline-block;
 				padding: 9/18em 42/18em;
@@ -694,6 +717,7 @@
 				.poppins500;
 				color: @header;
 				border: 1px solid #888888;
+				border-radius: 3px;
 				&:hover {
 					opacity: 0.6;
 				}
@@ -761,7 +785,9 @@
 				margin-top: 8px;
 				margin-bottom: 29px;
 			}
-
+			&:hover {
+				.poppins500;
+			}
 			color: @blue;
 		}
 /* FEEDBACK =================================== */
