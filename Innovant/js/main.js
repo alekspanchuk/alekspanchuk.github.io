@@ -1,10 +1,10 @@
-$().ready(function(){
+$(document).ready(function($) {
 
 // MENU
   var menu = $('.hamburger__menu_list');
   // show
     $('.header__hamburger').on('click', function(event) {
-      menu.show();
+      menu.fadeIn();
     });
   // hide on click out of menu
     $(document).mouseup(function (e) {
@@ -30,14 +30,14 @@ $().ready(function(){
         event.preventDefault();
         menu.hide();
         var id  = $(this).attr('href'),
-            top = $(id).offset().top;
+            top = $(id).offset().top - 30;
         $('body,html').animate({scrollTop: top}, 700);
     });
 // ABOUT
   $(".content__button").on("click", function (event) {
       event.preventDefault();
       var id  = $(this).attr('href'),
-          top = $(id).offset().top;
+          top = $(id).offset().top - 30;
       $('body,html').animate({scrollTop: top}, 700);
   });
 // PORTFOLIO FILTER
@@ -71,11 +71,10 @@ $().ready(function(){
     item.addClass('active')
         .siblings()
         .removeClass('active');
-    // скрываем весь контект
-    contentItem.hide();    
     // фильтруем по data-category и показываем
     activeItem = contentItem.filter('.' + itemCategory);        
-    activeItem.show();
+    contentItem.hide();
+    activeItem.fadeIn();
 
     // задаем отступы
     for (var i = 0; i < activeItem.length; i++) {
@@ -194,5 +193,32 @@ $().ready(function(){
   });
 // WOW
   new WOW().init();
+// TO TOP
+  $('.totop').on('click', function(event) {
+    event.preventDefault();
+    $('body, html').animate( {scrollTop: 0}, 800);
+    return false;
+  });
 
+  $(window).on('scroll', function(event) {
+  // $(window).scroll(function(){
+    var screenHeight = $('.header').height();
+    if ( $(window).scrollTop() > screenHeight ) {
+      $('.totop').show();
+    } else {
+      $('.totop').hide();
+    }
+  });
+// CONTACT FORM
+  $(".form__default").submit(function() {
+    $.ajax({
+      type: "POST",
+      url: "smart.php",
+      data: $(this).serialize()
+    }).done(function() {
+      alert('Сообщение отправлено!')
+      $(this).trigger("reset");
+    });
+    return false;
+  });
 });

@@ -8,8 +8,8 @@
   <title>Innovant</title>
 <!-- ==================================== LINKS -->
 	<link rel="stylesheet" type="text/css" href="./libs/slick_slider/slick.css">
-	<link rel="stylesheet" type="text/css" href="./libs/magnific-popup/magnific-popup.css">
   <link rel="stylesheet" href="./css/style.css">
+
   <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -510,10 +510,10 @@
 		</header>
 		<p class="contact__desc">We are passionate about the web and about enabling creators to make a living doing what they love.</p>
 	<!-- form -->	
-		<form method="POST" class="contact__form">
+		<form method="POST" action="smart.php" class="contact__form form__default">
 			<input type="hidden" name="from" value="contact">
 			<div class="contact__input contact__input--name">
-				<input type="text" name="username" placeholder="Name" required="">
+				<input type="text" name="name" placeholder="Name" required="">
 			</div>
 			<div class="contact__input contact__input--email">
 				<input type="email" name="email" placeholder="Email" required="">
@@ -555,9 +555,9 @@
 				</li>
 				<li class="menu-lvl1__item">
 					<h5 class="menu-lvl1__caption">Contact Us</h5>
-					<form class="footer__form">
+					<form method="POST" action="smart.php" class="footer__form form__default">
 						<input type="hidden" name="from" value="footer">
-						<input type="text" name="username" placeholder="Name" required="">
+						<input type="text" name="name" placeholder="Name" required="">
 						<input type="email" name="email" placeholder="Email" required="">
 						<button class="footer__button" type="submit">Subscribe now</button>
 					</form>
@@ -572,13 +572,20 @@
 		</div>
 	</footer>
 	<div class="copyright">&copy; Innovant . 2016 . All Right Reserved . Samsuzzaman Raju</div>
+<!-- TO TOP =================================== -->
+	<a href="#" class="totop">
+		<div class="totop__arrow"></div>
+	</a>
 <!-- ========================================== -->
 <!-- ================================== SCRIPTS -->
 	<!-- external scripts -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+		<script src="//cdn.jsdelivr.net/jquery.scrollto/2.1.2/jquery.scrollTo.min.js"></script>
+
+
 		<script src="./libs/slick_slider/slick.min.js"></script>
-		<script src="./libs/magnific-popup/jquery.magnific-popup.min.js"></script>
-		<!-- <script src="./libs/parallax/parallax.min.js"></script> -->
     <script src="./js/wow.min.js"></script>
 		<script src="./js/main.js"></script>
 </body>
