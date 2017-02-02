@@ -52,7 +52,7 @@
 			<div class="header__content">
 				<h1 class="header__caption">We Create Creative Design</h1>
 				<p class="header__text">When Creative Guys Like us Get Together, They Bring Smile on Users Face</p>
-				<a class="header__button" href="">Get started now</a>
+				<a class="header__button" href="#">Get started now</a>
 			</div>
 		</div>
 	</header>
@@ -121,20 +121,18 @@
 		</header>
 		<p class="works__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
 	<!-- menu -->		
-		<div class="works__menu">
-			<ul class="works_menu__list">
-				<li class="works_menu__item active"><a href="#">All</a></li>
-				<li class="works_menu__item"><a href="#">UI/UX Design</a></li>
-				<li class="works_menu__item"><a href="#">Web Design</a></li>
-				<li class="works_menu__item"><a href="#">Graphic Design</a></li>
-				<li class="works_menu__item"><a href="#">Web Development</a></li>
-				<li class="works_menu__item"><a href="#">Wordpress</a></li>
-				<li class="works_menu__item"><a href="#">Photography</a></li>
-			</ul>
-		</div>
+		<ul class="works_menu__list">
+			<li class="works_menu__item active" data-category="works__card_item"><a href="#">All</a></li>
+			<li class="works_menu__item" data-category="uiux"><a href="#">UI/UX Design</a></li>
+			<li class="works_menu__item" data-category="web"><a href="#">Web Design</a></li>
+			<li class="works_menu__item" data-category="uiux"><a href="#">Graphic Design</a></li>
+			<li class="works_menu__item" data-category="web"><a href="#">Web Development</a></li>
+			<li class="works_menu__item" data-category="uiux"><a href="#">Wordpress</a></li>
+			<li class="works_menu__item" data-category="web"><a href="#">Photography</a></li>
+		</ul>
 	<!-- cards -->
 		<ul class="works__card_list">
-			<li class="works__card_item">
+			<li class="works__card_item web">
 				<img class="works_card__img" src="./img/portfolio/01.jpg" alt="Portfolio Image">
 				<div class="works_card__action">
 			  	<div class="action__wrapper">
@@ -147,7 +145,7 @@
 				  </div>
 				</div>
 			</li>
-			<li class="works__card_item">
+			<li class="works__card_item uiux">
 				<img class="works_card__img" src="./img/portfolio/02.jpg" alt="Portfolio Image">
 				<div class="works_card__action">
 			  	<div class="action__wrapper">
@@ -160,7 +158,7 @@
 				  </div>
 				</div>
 			</li>
-			<li class="works__card_item">
+			<li class="works__card_item uiux">
 				<img class="works_card__img" src="./img/portfolio/03.jpg" alt="Portfolio Image">
 				<div class="works_card__action">
 			  	<div class="action__wrapper">
@@ -173,7 +171,7 @@
 				  </div>
 				</div>
 			</li>
-			<li class="works__card_item">
+			<li class="works__card_item uiux">
 				<img class="works_card__img" src="./img/portfolio/04.jpg" alt="Portfolio Image">
 				<div class="works_card__action">
 			  	<div class="action__wrapper">
@@ -186,26 +184,26 @@
 				  </div>
 				</div>
 			</li>
-			<li class="works__card_item">
+			<li class="works__card_item web">
 				<img class="works_card__img" src="./img/portfolio/05.jpg" alt="Portfolio Image">
 				<div class="works_card__action">
 			  	<div class="action__wrapper">
 					  <div class="action__caption">
 					    <div>PACKAGE DESIGN</div>
-					    <div>UI/UX DESIGN</div>
+					    <div>Web Design</div>
 					  </div>
 					  <div class="action__like"><a href="#"><i class="icon-portfolio_like"></i></a></div>
 					  <div class="action__chain"><a href="#"><i class="icon-portfolio_chain"></i></a></div>
 				  </div>
 				</div>
 			</li>
-			<li class="works__card_item">
+			<li class="works__card_item uiux">
 				<img class="works_card__img" src="./img/portfolio/06.jpg" alt="Portfolio Image">
 				<div class="works_card__action">
 			  	<div class="action__wrapper">
 					  <div class="action__caption">
 					    <div>PACKAGE DESIGN</div>
-					    <div>UI/UX DESIGN</div>
+					    <div>Web Design</div>
 					  </div>
 					  <div class="action__like"><a href="#"><i class="icon-portfolio_like"></i></a></div>
 					  <div class="action__chain"><a href="#"><i class="icon-portfolio_chain"></i></a></div>
@@ -580,7 +578,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="./libs/slick_slider/slick.min.js"></script>
 		<script src="./libs/magnific-popup/jquery.magnific-popup.min.js"></script>
-		<script src="./libs/parallax/parallax.min.js"></script>
+		<!-- <script src="./libs/parallax/parallax.min.js"></script> -->
     <script src="./js/wow.min.js"></script>
 		<script src="./js/main.js"></script>
 </body>

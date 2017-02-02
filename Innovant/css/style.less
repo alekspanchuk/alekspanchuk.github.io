@@ -277,11 +277,24 @@
 		.header {
 			position: relative;
 			min-height: 100vh;
-			// background-image: url(../img/header/background.jpg);
-			// background-size: cover;
-			// background-position: center;
-			background-color: transparent;
+			background-image: url(../img/header/background.jpg);
+	    background-attachment: fixed;
+	    background-position: center;
+	    background-repeat: no-repeat;
+	    background-size: cover;
 			color: #fff;
+		}
+		// fix backgournd-attachment jigga-drigga in IE
+		@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+		  html {
+		    overflow: hidden;
+		    height: 100%;    
+		  }
+		  body {
+		    overflow: auto;
+		    height: 100%;
+				overflow-x: hidden;
+		  }
 		}
 		.header__container {
 			width: 97%;
@@ -507,7 +520,7 @@
 			left: 54.5%;
 			top: 49%;
 			width: 30%;
-			.fontinit;
+			font-size: 16px;
 			line-height: 1.75;
 			@media screen and (max-width: 1450px) {	width: 40%; font-size: 14px; }
 			@media screen and (max-width: 1120px) { width: 45%; left: 52%; font-size: 13px; }
@@ -574,6 +587,8 @@
 		.works_menu__list {
 			margin-bottom: 15/16em;
 			text-align: center;
+			width: 95%;
+			.center;
 		}
 			.works_menu__item {
 				display: inline-block;
@@ -676,6 +691,7 @@
 		  padding: 25/16em 35/16em;
 		  div {
  			  color: #b0b0b0;
+		    text-transform: uppercase;
 			  &:first-child  {
 		    margin-bottom: 5/16em;
 		    color: #e4d288;

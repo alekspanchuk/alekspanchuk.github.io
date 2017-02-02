@@ -34,13 +34,116 @@ $().ready(function(){
         $('body,html').animate({scrollTop: top}, 700);
     });
 // ABOUT
-    $(".content__button").on("click", function (event) {
-        event.preventDefault();
-        var id  = $(this).attr('href'),
-            top = $(id).offset().top;
-        $('body,html').animate({scrollTop: top}, 700);
-    });
-// 
+  $(".content__button").on("click", function (event) {
+      event.preventDefault();
+      var id  = $(this).attr('href'),
+          top = $(id).offset().top;
+      $('body,html').animate({scrollTop: top}, 700);
+  });
+// PORTFOLIO FILTER
+  $('.works_menu__item').on('click', function(event) {
+    event.preventDefault();
+    var item = $(this),
+        contentItem = $('.works__card_item'),
+        itemCategory = $(this).data('category'),
+        itemsInRow = 3;
+        marginRight = '30px';
+        marginRightLast = '0px';
+        marginLeft = '0px';
+        float = 'left';
+        floatLast = 'right';
+        windowSize = $(window).width();
+
+    // определяем размер отступа на основании от размера экрана
+    if (windowSize > 960 && windowSize <= 1281) {
+      marginRight = '15px';
+    } else if ( windowSize > 650 && windowSize <= 960 ) {
+      itemsInRow = 2;
+      marginRight = '15px';
+    } else if ( windowSize <= 650 ) {
+      itemsInRow = 1;
+      marginRightLast = 'auto';
+      marginLeft = 'auto';
+      floatLast = 'none';
+    }
+
+    // помечаем активную ссылку
+    item.addClass('active')
+        .siblings()
+        .removeClass('active');
+    // скрываем весь контект
+    contentItem.hide();    
+    // фильтруем по data-category и показываем
+    activeItem = contentItem.filter('.' + itemCategory);        
+    activeItem.show();
+
+    // задаем отступы
+    for (var i = 0; i < activeItem.length; i++) {
+      if ( i % itemsInRow < (itemsInRow - 1) ) {
+        activeItem.eq(i).css({
+          'margin-right': marginRight,
+          'margin-left': marginLeft,
+          'float': float
+        });
+      } else {
+        activeItem.eq(i).css({
+          'margin-right': marginRightLast,
+          'margin-left': marginLeft,
+          'float': floatLast
+        });
+      }
+    }
+  }); 
+
+  // перерасчет отступов при изменении размеров окна
+  $(window).on('resize', function(event) {
+    event.preventDefault();
+    var item = $('.works_menu__item.active'),
+        contentItem = $('.works__card_item'),
+        itemCategory = $('.works_menu__item.active').data('category'),
+        itemsInRow = 3;
+        marginRight = '30px';
+        marginRightLast = '0px';
+        marginLeft = '0px';
+        float = 'left';
+        floatLast = 'right';
+        windowSize = $(window).width();
+
+    // определяем размер отступа на основании от размера экрана
+    if (windowSize > 960 && windowSize <= 1281) {
+      marginRight = '15px';
+    } else if ( windowSize > 650 && windowSize <= 960 ) {
+      itemsInRow = 2;
+      marginRight = '15px';
+    } else if ( windowSize <= 650 ) {
+      itemsInRow = 1;
+      marginRightLast = 'auto';
+      marginLeft = 'auto';
+      floatLast = 'none';
+    }
+
+    // фильтруем по data-category и показываем
+    activeItem = contentItem.filter('.' + itemCategory);        
+    // activeItem.show();
+
+    // задаем отступы
+    for (var i = 0; i < activeItem.length; i++) {
+      if ( i % itemsInRow < (itemsInRow - 1) ) {
+        activeItem.eq(i).css({
+          'margin-right': marginRight,
+          'margin-left': marginLeft,
+          'float': float
+        });
+      } else {
+        activeItem.eq(i).css({
+          'margin-right': marginRightLast,
+          'margin-left': marginLeft,
+          'float': floatLast
+        });
+      }
+    }
+
+  });
 // FEEDBACK SLIDERS
   $('.fback__slider').slick({
   	infinite: true,

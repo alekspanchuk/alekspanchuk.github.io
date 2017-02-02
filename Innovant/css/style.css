@@ -388,8 +388,23 @@ a {
 .header {
   position: relative;
   min-height: 100vh;
-  background-color: transparent;
+  background-image: url(../img/header/background.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: #fff;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  html {
+    overflow: hidden;
+    height: 100%;
+  }
+  body {
+    overflow: auto;
+    height: 100%;
+    overflow-x: hidden;
+  }
 }
 .header__container {
   width: 97%;
@@ -685,8 +700,7 @@ a {
   left: 54.5%;
   top: 49%;
   width: 30%;
-  font-size: initial;
-  line-height: initial;
+  font-size: 16px;
   line-height: 1.75;
   transform: translate(0, -50%);
 }
@@ -771,6 +785,9 @@ a {
 .works_menu__list {
   margin-bottom: 0.9375em;
   text-align: center;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .works_menu__item {
   display: inline-block;
@@ -904,6 +921,7 @@ a {
 }
 .action__caption div {
   color: #b0b0b0;
+  text-transform: uppercase;
 }
 .action__caption div:first-child {
   margin-bottom: 0.3125em;
