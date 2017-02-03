@@ -21,7 +21,7 @@
 			.pipe(gulp.dest('app/css/'))
 			.pipe(cssnano())
 			.pipe(rename({suffix: '.min'}))
-			.pipe(gulp.dest('app/css/'))
+			.pipe(gulp.dest('dist/css/'))
 	})
 // === CSS-LIBS
 	gulp.task('css-libs', function () {
@@ -30,14 +30,14 @@
 			.pipe(sass())
 			.pipe(cssnano())
 			.pipe(rename({suffix: '.min'}))
-			.pipe(gulp.dest('app/css/'))
+			.pipe(gulp.dest('dist/css/'))
 	})
 // === USERSCRIPT
 	gulp.task('userscript', function () {
 		return gulp.src('app/js/common.js')
 			.pipe(uglify())
 			.pipe(rename({suffix: '.min'}))
-			.pipe(gulp.dest('app/js/')) 
+			.pipe(gulp.dest('dist/js/')) 
 	})
 // === SCRIPTS
 	gulp.task('scripts', function () {
@@ -46,7 +46,7 @@
 		])
 			.pipe(concat('libs.min.js'))
 			.pipe(uglify())
-			.pipe(gulp.dest('app/js/')) 
+			.pipe(gulp.dest('dist/js/')) 
 	})
 // === IMG
 	gulp.task('img', function () {
