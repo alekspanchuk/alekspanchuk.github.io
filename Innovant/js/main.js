@@ -1,4 +1,4 @@
-$(document).ready(function($) {
+$(document).ready(function() {
 
 // MENU
   var menu = $('.hamburger__menu_list');
@@ -30,14 +30,14 @@ $(document).ready(function($) {
         event.preventDefault();
         menu.hide();
         var id  = $(this).attr('href'),
-            top = $(id).offset().top - 30;
+            top = $(id).offset().top;
         $('body,html').animate({scrollTop: top}, 700);
     });
 // ABOUT
   $(".content__button").on("click", function (event) {
       event.preventDefault();
       var id  = $(this).attr('href'),
-          top = $(id).offset().top - 30;
+          top = $(id).offset().top + 30;
       $('body,html').animate({scrollTop: top}, 700);
   });
 // PORTFOLIO FILTER
@@ -221,4 +221,5 @@ $(document).ready(function($) {
     });
     return false;
   });
+
 });

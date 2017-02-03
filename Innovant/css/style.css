@@ -367,11 +367,21 @@ body {
   font-weight: normal;
   font-size: 16px;
   line-height: 1.75;
+  background-image: url(../img/header/background.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1024px) {
   body {
     font-size: 14px;
+    background: none;
   }
+}
+section,
+footer {
+  background-color: #fff;
 }
 ul {
   margin: 0;
@@ -388,22 +398,15 @@ a {
 .header {
   position: relative;
   min-height: 100vh;
-  background-image: url(../img/header/background.jpg);
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   color: #fff;
 }
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  html {
-    overflow: hidden;
-    height: 100%;
-  }
-  body {
-    overflow: auto;
-    height: 100%;
-    overflow-x: hidden;
+@media screen and (max-width: 1024px) {
+  .header {
+    background-image: url(../img/header/background.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }
 .header__container {
@@ -557,9 +560,8 @@ a {
 .header__content {
   width: 90%;
   position: absolute;
-  left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(0, -50%);
   text-align: center;
 }
 @media screen and (min-width: 781px) and (max-width: 960px) {
@@ -760,8 +762,15 @@ a {
   opacity: 0.6;
 }
 /* PORTFOLIO ================================== */
+.works {
+  padding-top: 6.6875em;
+}
+@media screen and (max-width: 480px) {
+  .works {
+    padding-top: 3.75em;
+  }
+}
 .works__caption {
-  margin-top: 6.6875em;
   margin-bottom: 1em;
 }
 .works__caption h2 {
@@ -781,6 +790,11 @@ a {
   color: #777777;
   margin-left: auto;
   margin-right: auto;
+}
+@media screen and (max-width: 480px) {
+  .works__desc {
+    margin-bottom: 2.375em;
+  }
 }
 .works_menu__list {
   margin-bottom: 0.9375em;
@@ -971,8 +985,15 @@ a {
   opacity: 0.6;
 }
 /* SERVICES =================================== */
+.serv {
+  padding-top: 6.6875em;
+}
+@media screen and (max-width: 480px) {
+  .serv {
+    padding-top: 3.75em;
+  }
+}
 .serv__caption {
-  margin-top: 6.6875em;
   margin-bottom: 1em;
 }
 .serv__caption h2 {
@@ -992,6 +1013,11 @@ a {
   color: #777777;
   margin-left: auto;
   margin-right: auto;
+}
+@media screen and (max-width: 480px) {
+  .serv__desc {
+    margin-bottom: 2.375em;
+  }
 }
 .serv__container {
   width: 98%;
@@ -1033,6 +1059,11 @@ a {
 }
 .serv__card:last-child {
   margin-bottom: 7.5em;
+}
+@media screen and (max-width: 480px) {
+  .serv__card:last-child {
+    margin-bottom: 3.75em;
+  }
 }
 .serv-card__icon {
   margin-top: 0.66666667em;
@@ -1311,8 +1342,21 @@ a {
   font-weight: 600;
 }
 /* PRICE ====================================== */
+.price {
+  padding-top: 6.6875em;
+  padding-bottom: 7.5em;
+}
+@media screen and (max-width: 480px) {
+  .price {
+    padding-top: 3.75em;
+  }
+}
+@media screen and (max-width: 480px) {
+  .price {
+    padding-bottom: 3.75em;
+  }
+}
 .price__caption {
-  margin-top: 6.6875em;
   margin-bottom: 1em;
 }
 .price__caption h2 {
@@ -1333,6 +1377,11 @@ a {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 80px;
+}
+@media screen and (max-width: 480px) {
+  .price__desc {
+    margin-bottom: 2.375em;
+  }
 }
 .price__container {
   width: 90%;
@@ -1501,7 +1550,6 @@ a {
 }
 /* BLOG ======================================= */
 .blog__caption {
-  margin-top: 6.6875em;
   margin-bottom: 1em;
 }
 .blog__caption h2 {
@@ -1522,6 +1570,11 @@ a {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 5em;
+}
+@media screen and (max-width: 480px) {
+  .blog__desc {
+    margin-bottom: 2.375em;
+  }
 }
 .blog__slider-wrap {
   position: relative;
@@ -1665,8 +1718,17 @@ a {
   outline: none;
 }
 /* CONTACT ==================================== */
+.contact {
+  padding-bottom: 7.5em;
+  padding-top: 6.6875em;
+}
+@media screen and (max-width: 480px) {
+  .contact {
+    padding-top: 3.75em;
+    padding-bottom: 3.75em;
+  }
+}
 .contact__caption {
-  margin-top: 6.6875em;
   margin-bottom: 1em;
 }
 .contact__caption h2 {
@@ -1688,12 +1750,16 @@ a {
   max-width: 510px;
   margin-bottom: 4.6875em;
 }
+@media screen and (max-width: 480px) {
+  .contact__desc {
+    margin-bottom: 2.375em;
+  }
+}
 .contact__form {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
   max-width: 28.125em;
-  margin-bottom: 7.5em;
 }
 .contact__input {
   position: relative;
@@ -1893,9 +1959,12 @@ a {
   opacity: 0.8;
 }
 .copyright {
-  margin: 0.6875em 0;
+  padding: 0.6875em 0;
+  background-color: #fff;
   text-align: center;
   color: #676767;
+}
+.copyright span {
   opacity: 0.6;
 }
 /* TO TOP ===================================== */
@@ -1906,7 +1975,7 @@ a {
   display: none;
   width: 50px;
   height: 50px;
-  background-color: #fff;
+  background-color: #eee;
   opacity: 0.6;
   border-radius: 50%;
 }
