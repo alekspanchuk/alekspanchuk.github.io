@@ -1,0 +1,19 @@
+.basket__product {
+	width: 250px;
+}
+.basket__icon {
+	margin-left: 100px;
+	width: 50px;
+}
+#example_1 {
+	height: 100vh;
+	background-image: url(../img/bg_task_3.jpg);
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center;
+}
+#example_2 {
+	height: 100vh;
+	background-image: url(../img/bg_pattern_task_4.jpg);
+	background-repeat: repeat;
+}
