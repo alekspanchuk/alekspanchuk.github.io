@@ -4,6 +4,7 @@ $(document).ready(function() {
   var menu = $('.hamburger__menu_list');
   // show
     $('.header__hamburger').on('click', function(event) {
+      event.preventDefault();
       menu.fadeIn();
     });
   // hide on click out of menu
@@ -14,21 +15,22 @@ $(document).ready(function() {
     });
   // Smooth transition
     // for top menu
-    $(".hamburger__menu_item").on("click","a", function (event) {
-        //отменяем стандартную обработку нажатия по ссылке
+    $(".header__menu_item").on("click","a", function (event) {
+        var item = $(this).closest('.header__menu_item');
         event.preventDefault();
-        menu.hide();
-        //забираем идентификатор блока с атрибута href
+        
+        item.addClass('active')
+            .siblings()
+            .removeClass('active');
+
         var id  = $(this).attr('href'),
-        //узнаем высоту от начала страницы до блока на который ссылается якорь
             top = $(id).offset().top;
-        //анимируем переход на расстояние - top за 700 мс
         $('body,html').animate({scrollTop: top}, 700);
     });
     // for hamburger menu
-    $(".header__menu_item").on("click","a", function (event) {
+    $(".hamburger__menu_item").on("click","a", function (event) {
         event.preventDefault();
-        menu.hide();
+        menu.fadeOut();
         var id  = $(this).attr('href'),
             top = $(id).offset().top;
         $('body,html').animate({scrollTop: top}, 700);
@@ -92,6 +94,8 @@ $(document).ready(function() {
         });
       }
     }
+
+
   }); 
 
   // перерасчет отступов при изменении размеров окна
@@ -106,7 +110,7 @@ $(document).ready(function() {
         marginLeft = '0px';
         float = 'left';
         floatLast = 'right';
-        windowSize = $(window).width();
+        windowSize = $(window).width() + 17;
 
     // определяем размер отступа на основании от размера экрана
     if (windowSize > 960 && windowSize <= 1281) {
@@ -123,7 +127,7 @@ $(document).ready(function() {
 
     // фильтруем по data-category и показываем
     activeItem = contentItem.filter('.' + itemCategory);        
-    // activeItem.show();
+    activeItem.show();
 
     // задаем отступы
     for (var i = 0; i < activeItem.length; i++) {
@@ -193,7 +197,7 @@ $(document).ready(function() {
   });
 // WOW
   new WOW().init();
-// TO TOP
+// SCROLL HANDLER (TO TOP BUTTON AND FIXED MENU)
   $('.totop').on('click', function(event) {
     event.preventDefault();
     $('body, html').animate( {scrollTop: 0}, 800);
@@ -201,13 +205,64 @@ $(document).ready(function() {
   });
 
   $(window).on('scroll', function(event) {
-  // $(window).scroll(function(){
     var screenHeight = $('.header').height();
+
+    // show and hide TO TOP button
     if ( $(window).scrollTop() > screenHeight ) {
       $('.totop').show();
     } else {
       $('.totop').hide();
     }
+    // change TOP MENU color depend on position
+    if ( ($(window).scrollTop() > $('.header').height() - 20) && 
+       ( ($(window).scrollTop() < $('.fback').offset().top - 30) ||
+         ($(window).scrollTop() > $('.fback').offset().top + $('.fback').height() - 30) ) ) {
+      $('.header__menu_item a').css('color', '#585858');
+      $('.header__actions').css('color', '#585858');
+    } else {
+      $('.header__menu_item a').css('color', '#f1f1f1');
+      $('.header__actions').css('color', '#ffffff');
+    }
+    // change active menu item depend on position
+    var pagePos = $(window).scrollTop(),
+        homeEnd = $('.header').height() - 20,
+        aboutBegin = $('.about').offset().top - 20,
+        aboutEnd = aboutBegin + $('.about').height(),
+        portfolioBegin = $('.works').offset().top - 20,
+        portfolioEnd = portfolioBegin + $('.works').height(),
+        servicesBegin = $('.serv').offset().top - 20,
+        servicesEnd = servicesBegin + $('.serv').height(),
+        blogBegin = $('.blog').offset().top - 20,
+        blogEnd = blogBegin + $('.blog').height(),
+        contactBegin = $('.contact').offset().top - 20,
+        contactEnd = contactBegin + $('.contact').height();
+
+    if (pagePos < homeEnd) {
+      $('.item--home').addClass('active')
+        .siblings()
+        .removeClass('active');
+    } else if ( (pagePos > aboutBegin) && (pagePos < aboutEnd) ) {
+      $('.item--about').addClass('active')
+        .siblings()
+        .removeClass('active');
+    } else if ( (pagePos > portfolioBegin) && (pagePos < portfolioEnd) ) {
+      $('.item--portfolio').addClass('active')
+        .siblings()
+        .removeClass('active');
+    } else if ( (pagePos > servicesBegin) && (pagePos < servicesEnd) ) {
+      $('.item--services').addClass('active')
+        .siblings()
+        .removeClass('active');
+    } else if ( (pagePos > blogBegin) && (pagePos < blogEnd) ) {
+      $('.item--blog').addClass('active')
+        .siblings()
+        .removeClass('active');
+    } else if ( (pagePos > contactBegin) && (pagePos < contactEnd) ) {
+      $('.item--contact').addClass('active')
+        .siblings()
+        .removeClass('active');
+    }
+
   });
 // CONTACT FORM
   $(".form__default").submit(function() {
