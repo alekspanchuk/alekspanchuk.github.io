@@ -265,14 +265,18 @@ $(document).ready(function() {
 
   });
 // CONTACT FORM
+
   $(".form__default").submit(function() {
+    var formFrom = $(this).hasClass('contact__form') ? '.contact__onsubmit' : '.footer__onsubmit';
     $.ajax({
       type: "POST",
       url: "smart.php",
       data: $(this).serialize()
     }).done(function() {
-      alert('Сообщение отправлено!')
-      $(this).trigger("reset");
+      $(formFrom).css('opacity', '1');
+      setTimeout("$('.contact__onsubmit').css('opacity', '0');", 5000);  
+      setTimeout("$('.footer__onsubmit').css('opacity', '0');", 5000);  
+      $(".form__default").trigger('reset');
     });
     return false;
   });
